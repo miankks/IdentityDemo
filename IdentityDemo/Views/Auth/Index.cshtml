@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/Auth/Index/Admin">Admin</a>
+<a href="/Auth/Index/Editor">Editor</a>
+<a href="/Auth/Index/Root">Root</a>
+
+<h1>@ViewBag.Title</h1>
+@if (Request.IsAuthenticated)
+{
+<p>Logged in as 
+    @User.Identity.GetUserName()</p>
+}
+
+else {
+<p>Not currently logged in</p>
+}
